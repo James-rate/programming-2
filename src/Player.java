@@ -1,10 +1,8 @@
 public class Player extends Person {
 
     public Player(String name) {
-        this.name = name;
-        hand = new Hand();
+        super(name);
     }
-
 
     @Override
     public void haveTurn(Deck deck) {
@@ -34,5 +32,4 @@ public class Player extends Person {
         System.out.println("d = draw");
         System.out.println("s = stand");
     }
-
 }
