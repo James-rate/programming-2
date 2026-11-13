@@ -1,0 +1,6 @@
+# Preserve original source and resource bytes, including line endings.
+src/** -text
+artifacts/** -text
+*.jar binary
+*.png binary
+*.jpg binary
