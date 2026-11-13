@@ -1,10 +1,13 @@
 import javafx.application.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.*;
-import javafx.control.*;
-import javafx.scene.text.*;
+
+
 public class Calculator extends Application {
     public static void main(String[] args) { launch(args); }
 
@@ -36,9 +39,83 @@ public class Calculator extends Application {
         resultTf = new TextField();
 
         // 2. create the branch node
-        VBox vBox = new VBox(10, firstNumberLbl, firstNumberTf, secondNumberLbl, secondNumberTf, operationLbl, addBtn, subBtn, mulBtn, divBtn, resultLbl, resultTf);
-        
+        HBox hbox = new HBox(10);
+        hbox.getChildren().addAll(addBtn, subBtn, mulBtn, divBtn);
 
-        // 3. set the scene, show the stage
+        GridPane grid = new GridPane();
+
+
+
+
+        grid.add(firstNumberLbl, 0, 0);
+        grid.add(firstNumberTf, 1, 0);
+
+        grid.add(secondNumberLbl, 0, 1);
+        grid.add(secondNumberTf, 1, 1);
+
+        grid.add(operationLbl, 0, 2);
+        grid.add(hbox, 1, 2);
+
+        grid.add(resultLbl, 0, 3);
+        grid.add(resultTf, 1, 3);
+
+        addBtn.setOnAction(new EventHandler <ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                int num1 = Integer.parseInt(firstNumberTf.getText());
+                int num2 = Integer.parseInt(secondNumberTf.getText());
+                int result = num1 + num2;
+                resultTf.setText(String.valueOf(result));
+            }
+        });
+        addBtn.setOnAction(new AddHandler());
+
+        subBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                int first = Integer.parseInt(firstNumberTf.getText());
+                int second = Integer.parseInt(secondNumberTf.getText());
+                int result = first - second;
+                resultTf.setText(String.valueOf(result));
+            }
+        });
+
+        mulBtn.setOnAction(event -> {
+            int first =Integer.parseInt(firstNumberTf.getText());
+            int second = Integer.parseInt(secondNumberTf.getText());
+            int result = first * second;
+            resultTf.setText(String.valueOf(result));
+        });
+
+        divBtn.setOnAction(event -> {
+            int first = Integer.parseInt(firstNumberTf.getText());
+            int second = Integer.parseInt(secondNumberTf.getText());
+            int result = first / second;
+            resultTf.setText(String.valueOf(result));
+        });
+        Scene scene = new Scene(grid);
+        stage.setScene(scene);
+        stage.setTitle("Calculator");
+        stage.show();
     }
+    private int getFirstNumber() {
+        return Integer.parseInt(firstNumberTf.getText());
+    }
+    private int getSecondNumber() {
+        return Integer.parseInt(secondNumberTf.getText());
+    }
+    private void setResult(int value) {
+        resultTf.setText(String.valueOf(value));
+
+    }
+    private class AddHandler implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+            int first = Integer.parseInt(firstNumberTf.getText());
+            int second = Integer.parseInt(secondNumberTf.getText());
+            int result = first + second;
+            resultTf.setText(String.valueOf(result));
+        }
+    }
+
 }
