@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+<VBox fx:controller="controller.CardController" xmlns="http://javafx.com/javafx"
+      stylesheets="@/view/style.css"
+      xmlns:fx="http://javafx.com/fxml" spacing="8" prefWidth="250" alignment="CENTER" >
+    <ImageView fx:id="cardView"  fitWidth="200" preserveRatio="true"/>
+    <Button VBox.vgrow="ALWAYS" maxWidth="Infinity" fx:id="CloseBtn" text="Close" onAction="#CloseCard"/>
+</VBox>

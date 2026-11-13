@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<VBox fx:controller="controller.DealerController" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" spacing="10" prefWidth="300" prefHeight="300" stylesheets="/view/style.css">
+    <HBox spacing="10" alignment="center" prefHeight="300">
+        <ImageView fx:id="card1" fitHeight="200" preserveRatio="true" onMouseClicked="#openmaincard">
+            <Image url="/view/image/deck.png"></Image>
+        </ImageView>
+        <ImageView fx:id="card2" fitHeight="200" preserveRatio="true" onMouseClicked="#opensecondcard">
+            <Image url="/view/image/deck.png"></Image>
+        </ImageView>
+    </HBox>
+    <Separator/>
+    <HBox alignment="center" spacing="10">
+        <GridPane hgap="5" vgap="15">
+            <Label text="Player 1:" GridPane.columnIndex="0" GridPane.rowIndex="0" minWidth="60" prefWidth="50"></Label>
+            <Label fx:id="Player1H" text="0" GridPane.columnIndex="1" GridPane.rowIndex="0"  ></Label>
+            <Label text="Player 2:" GridPane.columnIndex="2" GridPane.rowIndex="0" minWidth="60" prefWidth="50"></Label>
+            <Label fx:id="Player2H" text="0" GridPane.columnIndex="3" GridPane.rowIndex="0"></Label>
+            <Label text="Player 3:" GridPane.columnIndex="0" GridPane.rowIndex="1" minWidth="60" prefWidth="50"></Label>
+            <Label fx:id="Player3H" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="1"></Label>
+            <Label text="Player 4:" GridPane.columnIndex="2" GridPane.rowIndex="1" minWidth="60" prefWidth="50"></Label>
+            <Label fx:id="Player4H" text="N/A" GridPane.columnIndex="3" GridPane.rowIndex="1"></Label>
+        </GridPane>
+        <Button HBox.hgrow="ALWAYS" prefHeight="35" prefWidth="88" fx:id="CallBtn" text="Call" onAction="#handlecall"/>
+    </HBox>
+    <Separator/>
+    <HBox>
+        <Button HBox.hgrow="ALWAYS" maxWidth="Infinity" fx:id="DealBtn" text="Deal" onAction="#handleDeal"/>
+        <Button HBox.hgrow="ALWAYS" maxWidth="Infinity" fx:id="PlayroundBtn" text="Play Round" onAction="#handleplay"/>
+        <Button HBox.hgrow="ALWAYS" maxWidth="Infinity" fx:id="CloseBtn" text="Exit" onAction="#handleClose"/>
+    </HBox>
+
+</VBox>
+

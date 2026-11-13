@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+<VBox fx:controller="controller.ErrorController" xmlns="http://javafx.com/javafx"
+      stylesheets="@/view/style.css"
+      xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="10" prefWidth="300" prefHeight="300">
+    <ImageView fitHeight="180" fitWidth="250" preserveRatio="true">
+        <Image url="/view/image/error.png"></Image>
+    </ImageView>
+    <Separator/>
+        <Text styleClass="error" fx:id="errorType" />
+    <Separator/>
+        <Text text="${controller.exception.message}"/>
+    <Button VBox.vgrow="ALWAYS" maxWidth="Infinity" prefHeight="30" fx:id="CloseBtn" text="Close" onAction="#handleClose"/>
+</VBox>

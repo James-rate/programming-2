@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--Note that this window is not complete!-->
+<?import javafx.scene.image.ImageView?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.LoginController"
+      stylesheets="@/view/style.css"
+      prefWidth="600.0" alignment="CENTER">
+
+    <GridPane hgap="40" vgap="10" styleClass="padding-large">
+        <ImageView fx:id="player1" fitWidth="80" preserveRatio="true" GridPane.halignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField GridPane.halignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="2" fx:id="player1Tf"/>
+        <ImageView fx:id="player2" fitWidth="80" preserveRatio="true" GridPane.halignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <TextField GridPane.halignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="player2Tf"/>
+        <ImageView fx:id="player3" fitWidth="80" preserveRatio="true" GridPane.halignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <TextField GridPane.halignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="player3Tf"/>
+        <ImageView fx:id="player4" fitWidth="80" preserveRatio="true" GridPane.halignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+        <TextField GridPane.halignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" fx:id="player4Tf"/>
+    </GridPane>
+
+    <Button maxWidth="Infinity" text="Start Game" onAction="#handleStart"/>
+
+</VBox>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<VBox fx:controller="controller.DeckController" xmlns="http://javafx.com/javafx"
+      stylesheets="@/view/style.css"
+      xmlns:fx="http://javafx.com/fxml" prefWidth="350" prefHeight="400">
+    <ListView fx:id="Decklv" VBox.vgrow="ALWAYS" prefHeight="250" prefWidth="400">
+    </ListView>
+    <HBox spacing="0">
+        <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" prefHeight="30" fx:id="ShowBtn" text="Show Card" onAction="#ShowCard"/>
+        <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" prefHeight="30" fx:id="CloseBtn" text="Close" onAction="#handleClose"/>
+    </HBox>
+</VBox>

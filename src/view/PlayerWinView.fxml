@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Button?>
+<VBox fx:controller="controller.PlayerWinController" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      stylesheets="/view/style.css" alignment="CENTER" prefWidth="300" prefHeight="150">
+    <Label styleClass="win" fx:id="winner" prefHeight="65"/>
+    <Separator/>
+    <Label fx:id="Health" prefHeight="65" />
+    <Button maxWidth="Infinity" fx:id="CloseBtn" text="Close" prefHeight="20" onAction="#handleClose"/>
+</VBox>
